@@ -1,5 +1,5 @@
 {% set name = "matgl" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
-  sha256: 38c9d02370696d8298cb01a9f75e753f66572048cfdbef8580b3e804698e798d
+  sha256: 5ee0eda4b07e2f6a3d31e4a423757b965d4e0ec65c2f1e7bcb48d5def6669165
 
 build:
   entry_points:
     - mgl = matgl.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,12 +22,13 @@ requirements:
     - setuptools >=58.0.3
     - pip
   run:
+    - pydantic
     - python >=3.9
     - ase
-    - dgl
+    - dgl >=2.0.0
     - pymatgen
     - pytorch-lightning
-    - pytorch
+    - pytorch <=2.2.1
 
 test:
   imports:

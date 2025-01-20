@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
   sha256: 6b09b3a7a68a1f6fe47bed8c7408540353e46371e32c1a1ac2bde347a6885a14
 
 build:
@@ -14,18 +14,18 @@ build:
     - mgl = matgl.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=58.0.3
     - pip
   run:
     - torchdata <0.8.0
     - lightning
     - pydantic
-    - python >=3.9
+    - python >={{ python_min }}
     - ase
     - dgl >=2.0.0
     - pymatgen
@@ -40,6 +40,7 @@ test:
     - mgl --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: MatGL is a framework for graph deep learning for materials science.

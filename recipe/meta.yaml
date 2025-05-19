@@ -1,5 +1,5 @@
 {% set name = "matgl" %}
-{% set version = "1.2.6" %}
+{% set version = "1.2.7" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
-  sha256: b2cda0c67f90e1659da8acf833046f377ffba4f80ed3ccdf2bcff85ccd286934
+  sha256: 1566a04716790f9053c3d9081bad1dd7dc3bf147fcdda79a5a21408a85d419e0
 
 build:
   entry_points:
@@ -31,7 +31,7 @@ requirements:
     - pydantic
     - python >={{ python_min }}
     - ase
-    - dgl <=2.2.0
+    - dgl <=2.1.0
     - pymatgen
     - pytorch-lightning
     - pytorch <=2.2.0

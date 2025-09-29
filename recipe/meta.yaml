@@ -1,6 +1,5 @@
 {% set name = "matgl" %}
 {% set version = "1.3.0" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -9,13 +8,15 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
   sha256: 33c68675d2bd9b9ee7deb2d0b92189cb5221775eb296af6425e04d04d4cf5ddc
+  patches:
+    - numpy.patch
 
 build:
   entry_points:
     - mgl = matgl.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -26,16 +27,16 @@ requirements:
     - torch-geometric >=2.6.1
     - boto3
     - fsspec
-    - numpy <2.0
-    - torchdata <=0.7.1
+    - numpy
+    - torchdata <=0.8.0
     - lightning <=2.6.0.dev20250810
     - pydantic
     - python >={{ python_min }}
     - ase
-    - dgl <=2.1.0
+    - dgl <=2.4.0
     - pymatgen
     - pytorch-lightning
-    - pytorch <=2.2.0
+    - pytorch <=2.4.0
 
 test:
   imports:

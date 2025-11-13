@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
   sha256: 630b27c4caaff4338a52a90e4389ee417a68135f43afe7ede35e4477727de42e
-  patches:
-    - numpy.patch
 
 build:
   entry_points:

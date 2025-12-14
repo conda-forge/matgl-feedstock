@@ -1,5 +1,5 @@
 {% set name = "matgl" %}
-{% set version = "2.0.4" %}
+{% set version = "2.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
-  sha256: 8c832bcc3115d40dae623741f09ee952e2c651d1d7f0397be5e0a353530ca019
+  sha256: b8123ef29c99e832d0b5f2691395337dca15c826d0ed1d78917396546a7a6486
 
 build:
   entry_points:
@@ -27,14 +27,14 @@ requirements:
     - fsspec
     - numpy <3.0
     - torchdata
-    - lightning <=2.6.0.dev20251123
+    - lightning <=2.6.0
     - pydantic
     - python >={{ python_min }}
     - ase
     - dgl <=2.4.0
     - pymatgen
     - pytorch-lightning
-    - pytorch <=2.7.0
+    - pytorch <=2.8.0
 
 test:
   imports:

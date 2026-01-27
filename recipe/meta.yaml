@@ -24,17 +24,15 @@ requirements:
   run:
     - torch-geometric
     - boto3
-    - fsspec
     - numpy <3.0
     - torchdata
-    - lightning <=2.6.0
+    - lightning
     - pydantic
     - python >={{ python_min }}
     - ase
-    - dgl <=2.4.0
     - pymatgen
-    - pytorch-lightning
-    - pytorch <=2.8.0
+    - lightning
+    - torch <= 2.8.0
 
 test:
   imports:

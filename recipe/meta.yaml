@@ -26,7 +26,6 @@ requirements:
     - boto3
     - numpy <3.0
     - torchdata
-    - lightning
     - pydantic
     - python >={{ python_min }}
     - ase

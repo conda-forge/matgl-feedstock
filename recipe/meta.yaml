@@ -14,7 +14,7 @@ build:
     - mgl = matgl.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,16 +24,13 @@ requirements:
   run:
     - torch-geometric
     - boto3
-    - fsspec
     - numpy <3.0
     - torchdata
-    - lightning <=2.6.0
     - pydantic
     - python >={{ python_min }}
     - ase
-    - dgl <=2.4.0
     - pymatgen
-    - pytorch-lightning
+    - lightning
     - pytorch <=2.8.0
 
 test:

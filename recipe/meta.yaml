@@ -1,5 +1,6 @@
 {% set name = "matgl" %}
 {% set version = "2.0.9" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -24,7 +25,6 @@ requirements:
   run:
     - pymatgen-core >=2026.2.24
     - pytorch_geometric
-    - torch-geometric
     - boto3
     - numpy <3.0
     - torchdata

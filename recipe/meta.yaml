@@ -1,5 +1,5 @@
 {% set name = "matgl" %}
-{% set version = "2.0.6" %}
+{% set version = "2.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
-  sha256: b8123ef29c99e832d0b5f2691395337dca15c826d0ed1d78917396546a7a6486
+  sha256: d84755ef20ab8462016ec73afafda3f3c1e9382b7c7806a966f5fd968abffbb2
 
 build:
   entry_points:
     - mgl = matgl.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,6 +22,8 @@ requirements:
     - setuptools >=58.0.3
     - pip
   run:
+    - pymatgen-core >=2026.2.24
+    - pytorch_geometric
     - torch-geometric
     - boto3
     - numpy <3.0
@@ -30,8 +32,8 @@ requirements:
     - python >={{ python_min }}
     - ase
     - pymatgen
-    - lightning
-    - pytorch <=2.8.0
+    - lightning <=2.6.1
+    - pytorch <=2.10.0
 
 test:
   imports:

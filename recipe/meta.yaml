@@ -24,7 +24,6 @@ requirements:
   run:
     - pymatgen-core >=2026.2.24
     - pytorch_geometric
-    - torch-geometric
     - boto3
     - numpy <3.0
     - torchdata

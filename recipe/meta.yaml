@@ -1,5 +1,5 @@
 {% set name = "matgl" %}
-{% set version = "2.1.1" %}
+{% set version = "2.1.2" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
-  sha256: ea9a9011c0a2473b1db67dd3411418e78d56bf2b3eaa0866ea258fdc538b9cfe
+  sha256: 2bd7bd0f6c009eef6cea1b6d8d4edb4f36db6d9fecbfd39def07b672ce160e9c
 
 build:
   entry_points:
@@ -23,7 +23,8 @@ requirements:
     - setuptools >=58.0.3
     - pip
   run:
-    - pymatgen-core >=2026.2.24
+    - huggingface_hub >=0.24
+    - pymatgen-core >=2026.4.16
     - pytorch_geometric
     - boto3
     - numpy <3.0
@@ -33,7 +34,7 @@ requirements:
     - ase
     - pymatgen
     - lightning <=2.6.1
-    - pytorch <=2.10.0
+    - pytorch
 
 test:
   imports:

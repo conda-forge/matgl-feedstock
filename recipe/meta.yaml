@@ -1,5 +1,5 @@
 {% set name = "matgl" %}
-{% set version = "2.1.2" %}
+{% set version = "2.2.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matgl-{{ version }}.tar.gz
-  sha256: 2bd7bd0f6c009eef6cea1b6d8d4edb4f36db6d9fecbfd39def07b672ce160e9c
+  sha256: 1a07b09edefbbfc803ca2247ded34b32e28bc635d0f8eaa2690991773d4f5e08
 
 build:
   entry_points:

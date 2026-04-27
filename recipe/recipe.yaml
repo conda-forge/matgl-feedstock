@@ -38,6 +38,7 @@ requirements:
     - ase
     - lightning <=2.6.1
     - pytorch
+    - mp-api
 tests:
   - python:
       imports:

@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: matgl
-  version: "2.2.0"
-  python_min: "3.11"
+  version: 2.2.1
+  python_min: '3.11'
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matgl-${{ version }}.tar.gz
-  sha256: 1a07b09edefbbfc803ca2247ded34b32e28bc635d0f8eaa2690991773d4f5e08
+  sha256: 37e972d3a529e8a413e21b1c07d38aa3d320d6f926d457b3bda1219b899c587b
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -36,10 +36,9 @@ requirements:
     - pydantic
     - python >=${{ python_min }}
     - ase
-    - pymatgen
     - lightning <=2.6.1
     - pytorch
-
+    - mp-api
 tests:
   - python:
       imports:

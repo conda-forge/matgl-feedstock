@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: matgl
-  version: "3.0.3"
+  version: 3.0.4
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matgl-${{ version }}.tar.gz
-  sha256: af18bec702faa0ce8eadfcabd4ae3d586ac5092144b7cacb972741e3d259f4c8
+  sha256: ed967afccdbe696c1c09d4e195590faf38e518d42c08597570cd24376ec4a4fd
 
 build:
   number: 0
@@ -28,10 +28,10 @@ requirements:
     - pip
   run:
     - huggingface_hub >=0.24
-    - pymatgen-core >=2026.4.16
+    - pymatgen-core >=2026.5.18
     - pytorch_geometric
     - boto3
-    - numpy <3.0
+    - numpy
     - torchdata
     - pydantic
     - python >=${{ python_min }}

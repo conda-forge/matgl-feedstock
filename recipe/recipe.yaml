@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: matgl
-  version: "4.0.2"
+  version: "4.0.3"
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matgl-${{ version }}.tar.gz
-  sha256: de0c245654f73868269016f5e1e1efcad617c804b1bc5d4e3be286f95ccd5e32
+  sha256: 6bd71ff6f252aa6b3418f5f000088e434613b9c643f9d57a01c85d67e8807381
 
 build:
   number: 0

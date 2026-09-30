@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: matgl
-  version: "4.0.3"
+  version: 4.1.0
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matgl-${{ version }}.tar.gz
-  sha256: 6bd71ff6f252aa6b3418f5f000088e434613b9c643f9d57a01c85d67e8807381
+  sha256: da2e15e49e19c15222a1fd5c61011fdbac116ad93a35da54d30b7933136040f3
 
 build:
   number: 0
@@ -36,7 +36,7 @@ requirements:
     - pydantic
     - python >=${{ python_min }}
     - ase
-    - lightning <=2.6.1
+    - lightning >=2.6.6
     - pytorch
 tests:
   - python:
